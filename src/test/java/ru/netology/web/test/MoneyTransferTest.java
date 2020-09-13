@@ -7,6 +7,8 @@ import ru.netology.web.page.DashboardPage;
 import ru.netology.web.page.LoginPage;
 
 import static com.codeborne.selenide.Selenide.open;
+import static ru.netology.web.data.DataHelper.getFirstCardInfo;
+import static ru.netology.web.data.DataHelper.getSecondCardInfo;
 import static ru.netology.web.page.DashboardPage.*;
 
 class MoneyTransferTest {
@@ -21,8 +23,10 @@ class MoneyTransferTest {
         verificationPage.validVerify(verificationCode);
 
         val dashboardPage = new DashboardPage();
-        val balance = dashboardPage.getFirstCardBalance();
-        dashboardPage.moneyTransfer(200);
+        val firstCardBalance = dashboardPage.getCardBalance(getFirstCardInfo());
+        val secondCardBalance = dashboardPage.getCardBalance(getSecondCardInfo());
+        dashboardPage.replenishButtonClick(getSecondCardInfo());
+//        dashboardPage.moneyTransfer(200);
 
     }
 
