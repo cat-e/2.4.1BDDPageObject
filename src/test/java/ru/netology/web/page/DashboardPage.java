@@ -46,7 +46,7 @@ public class DashboardPage {
     }
 
     @Value
-    public static class TransferAmount {
+    public static class TransferPage {
         private static int amount;
 
         public static int getAmount() {
@@ -60,7 +60,7 @@ public class DashboardPage {
     private SelenideElement transferButton = $("[data-test-id=action-transfer]");
 
     public DashboardPage moneyTransfer(Integer amount) {
-        amountField.setValue(String.valueOf(TransferAmount.getAmount()));
+        amountField.setValue(String.valueOf(TransferPage.getAmount()));
         fromField.setValue(String.valueOf(getFirstCardInfo()));
         toField.setValue(String.valueOf(getSecondCardInfo()));
         transferButton.click();

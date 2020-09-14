@@ -26,7 +26,7 @@ class MoneyTransferTest {
         val firstCardBalance = dashboardPage.getCardBalance(getFirstCardInfo());
         val secondCardBalance = dashboardPage.getCardBalance(getSecondCardInfo());
         dashboardPage.replenishButtonClick(getSecondCardInfo());
-//        dashboardPage.moneyTransfer(200);
+        dashboardPage.moneyTransfer(200);
 
     }
 
