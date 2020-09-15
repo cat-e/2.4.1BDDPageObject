@@ -5,6 +5,7 @@ import org.junit.jupiter.api.Test;
 import ru.netology.web.data.DataHelper;
 import ru.netology.web.page.DashboardPage;
 import ru.netology.web.page.LoginPage;
+import ru.netology.web.page.TransferPage;
 
 import static com.codeborne.selenide.Selenide.open;
 import static ru.netology.web.data.DataHelper.getFirstCardInfo;
@@ -26,7 +27,10 @@ class MoneyTransferTest {
         val firstCardBalance = dashboardPage.getCardBalance(getFirstCardInfo());
         val secondCardBalance = dashboardPage.getCardBalance(getSecondCardInfo());
         dashboardPage.replenishButtonClick(getSecondCardInfo());
-        dashboardPage.moneyTransfer(200);
+
+
+        val transferPage = new TransferPage();
+        transferPage.moneyTransfer(1000, "5559 0000 0000 0001");
 
     }
 
