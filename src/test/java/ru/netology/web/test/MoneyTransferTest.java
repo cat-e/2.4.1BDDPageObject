@@ -33,6 +33,7 @@ class MoneyTransferTest {
         val dashboardPageAfterTransfer = new DashboardPage();
         dashboardPageAfterTransfer.getCardBalance(getFirstCardInfo());
         assertThat(dashboardPageAfterTransfer, containsString(String.valueOf(getFirstCardInfo())));
+        assertThat(dashboardPageAfterTransfer, containsString(String.valueOf(getSecondCardInfo())));
 
     }
 
